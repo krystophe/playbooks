@@ -1,4 +1,5 @@
 - name: playbook pour upgrade
+  hosts: all
   become: yes
   tasks: 
     - name: executer un upgrade de tous les packages  
