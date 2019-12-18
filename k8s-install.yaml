@@ -1,0 +1,23 @@
+- name: playbook pour installer k8s
+  hosts: informatique
+  become: yes
+  tasks:
+
+- name: utiliser le playbook de docker  
+  include: docker-for-ubuntu.yaml  
+
+- name: ajout des clés 
+  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  shell: curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+
+- name: repository de kubernetes
+    apt_repository: 
+      repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+      state: present
+      filename: kubernetes
+
+- name: installation de k8s
+  apt:
+    name: kubeadm
+    update_cache: yes
+    state: present # valeurs possibles absent, build-dep, installed, latest, present, removed, present

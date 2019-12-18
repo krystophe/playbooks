@@ -1,0 +1,13 @@
+- name: playbook pour new install de poste 
+  hosts: informatique
+  become: yes
+  tasks:
+
+- name: utiliser le playbook update 
+  include: update.yaml  
+
+- name: utiliser le playbook upgrade 
+  include: upgrade.yaml 
+
+- name: utiliser le playbook packages_update
+  include: packages_update.yaml  
