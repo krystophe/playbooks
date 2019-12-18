@@ -1,5 +1,4 @@
 - name: playbook pour upgrader des packages spécifique 
-  hosts: informatique
   #gather_facts: no
   become: yes
   tasks: 

@@ -1,9 +1,8 @@
 - name: playbook pour upgrade
-  hosts: informatique
   become: yes
   tasks: 
     - name: executer un upgrade de tous les packages  
-    apt:
-      upgrade: full 
+      apt:
+        upgrade: full 
 
 

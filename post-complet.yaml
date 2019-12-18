@@ -1,5 +1,4 @@
 - name: playbook pour new install de poste 
-  hosts: informatique
   become: yes
   tasks:
 

@@ -1,5 +1,4 @@
 - name: playbook pour update 
-  hosts: informatique
   become: yes
   tasks: 
     - name: desactiver maj auto de ubuntu 
